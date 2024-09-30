@@ -3,7 +3,10 @@ import { openDB } from '../../../lib/db';
 
 export async function POST(request: Request) {
     try {
-        const { word1_id, word2_id, selected_id } = await request.json();
+        const body = await request.text();
+        console.log("Raw body:", body);
+        const { word1_id, word2_id, selected_id } = JSON.parse(body);
+        console.lof("Parsed body:", { word1_id, word2_id, selected_id });
         if (!word1_id || !word2_id || selected_id) {
             throw new Error("Missing fields in the request body");
         }

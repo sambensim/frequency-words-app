@@ -37,7 +37,7 @@ export default function Home() {
       await fetch('/api/submitResponse', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           word1_id: word1.id,
