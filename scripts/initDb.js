@@ -26,7 +26,14 @@ async function setup() {
         );
     `);
 
-    const frequency_words = ['always', 'never', 'coin flip', 'sometimes', 'likely', 'rarely']
+    const frequency_words = [
+        'it\'s probable', 'it\'s almost certain', 'it will maybe happen', 'it\'s possible',
+        'it\'s likely', 'it\'s unlikely', 'there\'s a chance', 'it might happen',
+        'it\'s certain', 'it\'s very likely', 'it\'s highly likely', 'it\'s a real possibility',
+        'there\'s a good chance', 'it\'s extremely likely', 'it\'s almost impossible', 'it\'s impossible',
+        'it\'s improbable', 'it\'s quite likely', 'it\'s fairly likely', 'there\'s a low chance',
+        'in all likelihood'
+    ]
     //.all is for running SQL commands that do return results (multiple)
     //parentheses around first part so that .map is run after awaiting rather than on the promise
     const existingWords = (await db.all('SELECT * FROM Words')).map(row => row.word);
