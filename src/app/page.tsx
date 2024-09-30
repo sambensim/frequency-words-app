@@ -25,8 +25,8 @@ export default function Home() {
       const data = await response.json();
       setWords(data);
       setLoading(false);
-    } catch (err) {
-      setError('Failed to fetch words.');
+    } catch (error) {
+      setError('Failed to fetch words:\n' + error);
       setLoading(false);
     }
   };
@@ -46,8 +46,8 @@ export default function Home() {
         }),
       });
       fetchWords();
-    } catch (err) {
-      setError('Failed to submit response.');
+    } catch (error) {
+      setError('Failed to submit response:\n' + error);
     }
   };
 

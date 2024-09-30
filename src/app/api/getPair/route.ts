@@ -7,6 +7,6 @@ export async function GET() {
         const words = await db.all('SELECT id, word FROM Words ORDER BY RANDOM() LIMIT 2');
         return NextResponse.json(words);
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to fetch words' }, { status: 500});
+        return NextResponse.json({ error: 'Failed to fetch words:\n' + error }, { status: 500});
     }
 }

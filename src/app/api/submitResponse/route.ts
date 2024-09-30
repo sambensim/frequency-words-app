@@ -14,6 +14,6 @@ export async function POST(request: Request) {
         );
         return NextResponse.json({ message: 'Response recorded' });
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to record response' }, { status: 500 })
+        return NextResponse.json({ error: 'Failed to record response:\n' + error }, { status: 500 })
     }
 }
